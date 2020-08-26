@@ -31,4 +31,8 @@ class House
     price = (@price.delete("$")).to_f
     (price / area).round(2)
   end
+
+  def rooms_sorted_by_area
+    @rooms.sort {|room1,room2| room1.area <=> room2.area}.reverse!
+  end
 end
