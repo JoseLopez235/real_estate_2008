@@ -35,4 +35,14 @@ class House
   def rooms_sorted_by_area
     @rooms.sort {|room1,room2| room1.area <=> room2.area}.reverse!
   end
+
+  def rooms_by_category
+    hash_category = {}
+    @rooms.each do |room|
+      if hash_category[room.category].nil?
+        hash_category[room.category] = rooms_from_category(room.category)
+      end
+    end
+    hash_category
+  end
 end
