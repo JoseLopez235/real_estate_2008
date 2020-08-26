@@ -58,7 +58,7 @@ class HouseTest < Minitest::Test
 
   def test_should_return_a_hash_with_class_attributes
     house = House.new("$400000", "123 sugar lane")
-    expected = {"price" => 400000, "address" => "123 sugar lane"}
+    expected = {"price" => "$400000", "address" => "123 sugar lane"}
     assert_equal expected, house.details
   end
 end
